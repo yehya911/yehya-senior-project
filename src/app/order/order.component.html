@@ -1,0 +1,42 @@
+<div class="container my-5">
+    <div class="row mb-5" *ngFor="let food of foodData">
+        <div class="col-lg-6">
+            <img src="assets/Images/{{food.img}}" width="100%" />
+            <h1 class="mt-3">{{food.name}}</h1>
+            <p>{{food.description}}</p>
+            <div class="d-flex flex justify-content-around align-items-center">
+                <div class="d-flex mb-2">
+                    <h5 class="mx-2">Price:</h5>
+                    <h5>{{food.price}}$</h5>
+                </div>
+                <div class="d-flex mb-2">
+                    <h5 class="mx-2">Point Price:</h5>
+                    <h5>{{food.point_price}}<i class="bi bi-p-circle"></i></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-12" *ngIf="loggedIn; else loggedOut">
+            <h1>Enter Your Details</h1>
+            <form *ngFor="let user of userInfo">
+                <input type="text" id="name" class="form-control my-2" [(ngModel)]="user.name" name="name"
+                    placeholder="Enter Your Full Name" />
+                <input type="number" id="phonenumber" class="form-control my-2" [min]="0" [(ngModel)]="user.phonenumber"
+                    name="phonenumber" placeholder="Enter Your Mobile Number" />
+                <textarea id="address" class="form-control my-2" [(ngModel)]="user.address" name="address"
+                    placeholder="Enter Your Address"></textarea>
+                <div class="container-fluid d-flex justify-content-around">
+                    <button (click)="order()" class="btn btn-md btn-success my-2">Place Order</button>
+                    <button (click)="orderPoints()" class="btn btn-md btn-primary my-2">Use Points</button>
+                </div>
+            </form>
+        </div>
+        <ng-template #loggedOut>
+            <div class="col-lg-6 col-12 text-center mt-5">
+                <h1 class="text-success fw-bold fst-italic">You Need to Login First</h1>
+            </div>
+        </ng-template>
+    </div>
+    <div class="text-center">
+        <a routerLink="../../menu" class="btn btn-sm btn-dark px-5">Back</a>
+    </div>
+</div>

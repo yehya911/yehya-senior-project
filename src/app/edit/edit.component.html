@@ -1,0 +1,72 @@
+<div class="container my-5">
+    <div class="row" *ngFor="let food of foodData">
+        <div class="col-md-6 col-12">
+            <div class="row">
+                <div *ngFor="let food of foodData">
+                    <div class="card">
+                        <img class="card-img-top c-image" src="assets/Images/{{food.img}}" alt="Card image">
+                        <div class="card-body">
+                            <h3 class="card-title">{{food.name}}</h3>
+                            <p class="card-text">{{food.description}}</p>
+                            <hr>
+                            <div class="d-flex flex-column align-items-center">
+                                <div class="d-flex mb-2">
+                                    <h4 class="mx-2">Price:</h4>
+                                    <h4>{{food.price}}$</h4>
+                                </div>
+                                <div class="d-flex mb-2">
+                                    <h4 class="mx-2">Point Price:</h4>
+                                    <h4>{{food.point_price}}<i class="bi bi-p-circle"></i></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="card1">
+                    <span class="title">Edit this item</span>
+                    <form (submit)="submitForm()" class="form">
+                        <div class="group">
+                            <input id="name" type="text" [(ngModel)]="food.name" name="name">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="group mb-3">
+                            <select id="cat" class="form-select">
+                                <option value="0">Select a Category</option>
+                                <option id="cat" *ngFor="let category of categories" [value]="category.id">
+                                    {{category.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="group">
+                            <input id="price" type="number" [min]="0" [(ngModel)]="food.price" id="price" name="price">
+                            <label for="price">Price</label>
+                        </div>
+                        <div class="group">
+                            <input id="pointPrice" type="number" [min]="0" [(ngModel)]="food.point_price"
+                                name="point_price">
+                            <label for="point_price">Point Price</label>
+                        </div>
+                        <div class="group">
+                            <textarea id="description" [(ngModel)]="food.description" id="description"
+                                name="description" rows="5"></textarea>
+                            <label for="description">description</label>
+                        </div>
+                        <div class="group">
+                            <input id="image" type="file" name="image">
+                            <label for="image">Image</label>
+                        </div>
+                        <button type="submit">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a routerLink="../../all" class="btn btn-sm btn-dark mt-5 px-5">Back</a>
+    </div>
+</div>

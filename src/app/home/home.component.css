@@ -1,0 +1,43 @@
+.banner {
+  background-image: url("/assets/Images/home_img.jpg");
+  height: 600px;
+  background-position: center top;
+  background-size: cover;
+}
+
+.content {
+  top: 25%;
+  left: 15%;
+  position: relative;
+}
+
+.content a {
+  background-color: white;
+  color: #14a44d;
+  padding: 15px 20px;
+  transition: all 200ms ease;
+}
+
+.content a:hover {
+  background-color: #14a44d;
+  color: white;
+}
+
+.stepBox {
+  padding: 20px 20px;
+}
+
+.c-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.view-more {
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.view-more i {
+  position: relative;
+  top: 3px;
+}

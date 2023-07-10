@@ -1,0 +1,28 @@
+.footer {
+  overflow: hidden;
+  position: relative;
+  bottom: 0;
+  padding: 0px 10px;
+}
+
+h1 {
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+p {
+  color: white;
+  font-size: 12px;
+}
+a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 17px;
+}
+a:hover {
+  color: rgb(206, 206, 206);
+}
+i {
+  padding: 10px 5px;
+}

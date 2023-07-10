@@ -1,0 +1,15 @@
+img {
+  width: 250px;
+  height: 180px;
+}
+
+.hover_border {
+  font: 1.5rem sans-serif;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+  border: 1px solid grey;
+}
+
+.hover_border:hover {
+  box-shadow: 10px 10px 5px 0 grey;
+}
