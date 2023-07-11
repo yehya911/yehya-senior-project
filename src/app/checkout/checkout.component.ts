@@ -126,7 +126,7 @@ export class CheckoutComponent implements OnInit {
         localStorage.removeItem('cartItems')
       }
     } else {
-      alert("You need to log in before adding a review.")
+      alert("You need to log in before making your order.")
     }
   }
 
