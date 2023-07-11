@@ -3,12 +3,13 @@
   height: 600px;
   background-position: center top;
   background-size: cover;
+  overflow: hidden;
 }
 
 .content {
+  position: relative;
   top: 25%;
   left: 15%;
-  position: relative;
 }
 
 .content a {
