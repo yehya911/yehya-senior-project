@@ -1,0 +1,6 @@
+<app-header *ngIf="!isAdmin; else adminHeader"></app-header>
+<ng-template #adminHeader>
+    <app-admin-navigation></app-admin-navigation>
+</ng-template>
+<router-outlet></router-outlet>
+<app-footer *ngIf="!isAdmin"></app-footer>

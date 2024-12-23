@@ -1,0 +1,53 @@
+<section class="container py-5">
+    <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1">What would you like to order</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="hover_border p-4 mt-3">
+                <a class="d-flex justify-content-center align-items-center" [routerLink]="['../appetizers',1]">
+                    <img class="rounded-circle img-fluid border" src="assets/Images/Mozzarella Sticks.jpg" />
+                </a>
+                <h5 class="text-center mt-3 mb-3">Appetizers</h5>
+                <p class="text-center">
+                    <a [routerLink]="['../appetizers',1]" class="btn btn-success">Go Ordrer</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="hover_border p-4 mt-3">
+                <a class="d-flex justify-content-center align-items-center" [routerLink]="['../entrees',2]">
+                    <img class="rounded-circle img-fluid border" src="assets/Images/Paneer Burger.jpg" />
+                </a>
+                <h2 class="h5 text-center mt-3 mb-3">Entrees</h2>
+                <p class="text-center">
+                    <a [routerLink]="['../entrees',2]" class="btn btn-success">Go Ordrer</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="hover_border p-4 mt-3">
+                <a class="d-flex justify-content-center align-items-center" [routerLink]="['../desserts',3]">
+                    <img class="rounded-circle img-fluid border" src="assets/Images/caramel-topped-ice-cream.jpg" />
+                </a>
+                <h2 class="h5 text-center mt-3 mb-3">Desserts</h2>
+                <p class="text-center">
+                    <a [routerLink]="['../desserts',3]" class="btn btn-success">Go Ordrer</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="hover_border p-4 mt-3">
+                <a class="d-flex justify-content-center align-items-center" [routerLink]="['../drinks',4]">
+                    <img class="rounded-circle img-fluid border" src="assets/Images/Pepsi.jpg" />
+                </a>
+                <h2 class="h5 text-center mt-3 mb-3">Drinks</h2>
+                <p class="text-center">
+                    <a [routerLink]="['../drinks',4]" class="btn btn-success">Go Ordrer</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+.button-like {
+  border: none;
+  background-color: transparent;
+  padding: 2px;
+  font: inherit;
+  cursor: pointer;
+  color: white;
+
+  transition: color 0.3s ease;
+}
+
+.button-like:hover {
+  color: yellow;
+  text-decoration: underline;
+}

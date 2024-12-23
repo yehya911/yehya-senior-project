@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="form-box">
+                <form [formGroup]="myForm" (submit)="submitForm()" class="form">
+                    <span class="title">Sign up</span>
+                    <span class="subtitle">Create a free account with your email.</span>
+                    <div class="form-container">
+                        <input type="text" id="name" formControlName="name" class="input" [(ngModel)]="name" name="name"
+                            placeholder="User Name">
+                        <input type="email" id="email" formControlName="email" class="input" [(ngModel)]="email"
+                            name="email" placeholder="Enter your email">
+                        <input type="password" id="password" formControlName="password" class="input"
+                            [(ngModel)]="password" name="password" placeholder="Enter your password">
+                        <input type="number" id="phonenumber" class="input" name="phonenumber"
+                            placeholder="Enter your phonenumber (optional)">
+                        <textarea id="address" class="form-control my-2" name="address"
+                            placeholder="Enter Your Address (optional)"></textarea>
+                    </div>
+                    <button type="submit">Sign up</button>
+                </form>
+                <div class="form-section text-center">
+                    <p>Have an account? <a routerLink="../login">Log in</a> </p>
+                    <a routerLink="../aboutpoints">About Points</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

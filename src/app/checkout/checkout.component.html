@@ -1,0 +1,83 @@
+<div class="my-5 cont" *ngIf="cartItems.length!==0; else noItems">
+    <div class="master-container">
+        <div class="card cart">
+            <label class="title">Your cart</label>
+            <div class="products" *ngFor="let food of cartItems; let i = index">
+                <div class="product m-3">
+                    <img src="assets/Images/{{food.img}}" class="rounded">
+                    <div class="d-flex justify-content-around align-items-center">
+                        <span class="mx-2">{{food.name}}</span>
+                        <span class="mx-2">${{food.price}}</span>
+                        <span class="mx-2">{{food.point_price}} <i class="bi bi-p-circle"></i></span>
+                    </div>
+                    <div class="quantity">
+                        <button (click)="remove(i)">
+                            <svg fill="none" viewBox="0 0 24 24" height="14" width="14"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b"
+                                    d="M20 12L4 12"></path>
+                            </svg>
+                        </button>
+                        <label id="quantity" class="ms-1">{{food.quantity}}</label>
+                        <button (click)="add(i)">
+                            <svg fill="none" viewBox="0 0 24 24" height="14" width="14"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" stroke="#47484b"
+                                    d="M12 4V20M20 12H4"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="d-flex mt-1">
+                        <div>
+                            <label class="price small mt-1" *ngIf="!food.points; else points">${{food.price *
+                                food.quantity}}</label>
+                            <ng-template #points>
+                                <label class="price small mt-1 d-flex">
+                                    {{food.point_price * food.quantity}}<i class="bi bi-p-circle"></i>
+                                </label>
+                            </ng-template>
+                        </div>
+                        <div class="d-flex">
+                            <button class="btn btn-danger btn-sm ms-2" (click)="deleteItem(i)">Remove</button>
+                            <button class="btn btn-primary btn-sm ms-2" (click)="usePoints(i)"
+                                *ngIf="!food.points; else noPoints">Points</button>
+                            <ng-template #noPoints>
+                                <button class="btn btn-warning btn-sm ms-2" (click)="removePoints(i)">No Points</button>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="card checkout">
+            <label class="title">Checkout</label>
+            <div class="details">
+                <span>Your cart subtotal:</span>
+                <span>{{subTotal}}$</span>
+                <span>Discount through used points:</span>
+                <span>{{pointTotal}}<i class="bi bi-p-circle ms-1"></i></span>
+            </div>
+            <div class="checkout--footer">
+                <label class="price"><sup>$</sup>{{total}}</label>
+                <button class="checkout-btn" (click)="checkOut()">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <h1 class="mt-5">Enter Your Details</h1>
+        <form *ngFor="let user of userInfo">
+            <input type="text" id="name" class="form-control my-2" [(ngModel)]="user.name" name="name"
+                placeholder="Enter Your Full Name" />
+            <input type="number" id="phonenumber" class="form-control my-2" [min]="0" [(ngModel)]="user.phonenumber"
+                name="phonenumber" placeholder="Enter Your Mobile Number" />
+            <textarea id="address" class="form-control my-2" [(ngModel)]="user.address" name="address"
+                placeholder="Enter Your Address"></textarea>
+        </form>
+    </div>
+</div>
+<ng-template #noItems>
+    <div class="col-12 text-center mt-5">
+        <h1 class="text-success fw-bold fst-italic">Your Cart is Empty</h1>
+    </div>
+</ng-template>

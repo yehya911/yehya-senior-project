@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center align-items-center" *ngFor="let user of userInfo">
+    <div class="card1">
+        <span class="title">Edit this item</span>
+        <form class="form" (submit)="submitForm()">
+            <div class="group">
+                <input id="name" type="text" [(ngModel)]="user.name" name="name">
+                <label for="name">Name</label>
+            </div>
+            <div class="group">
+                <input id="password" type="text" [(ngModel)]="user.password" id="password" name="password">
+                <label for="password">Password</label>
+            </div>
+            <div class="group">
+                <input id="phonenumber" type="number" [min]="0" [(ngModel)]="user.phonenumber" name="phonenumber">
+                <label for="phonenumber">Phone Number</label>
+            </div>
+            <div class="group">
+                <textarea id="address" [(ngModel)]="user.address" id="address" name="address" rows="5"></textarea>
+                <label for="address">Address</label>
+            </div>
+            <button type="submit">Confirm</button>
+        </form>
+    </div>
+</div>
