@@ -44,12 +44,20 @@ const routes: Routes = [
   { path: "addfood", component: AddFoodComponent, canActivate: [AuthGuard] },
   { path: "checkreviews/:id", component: CheckReviewsComponent, canActivate: [AuthGuard] },
   { path: "edit/:id", component: EditComponent, canActivate: [AuthGuard] },
+<<<<<<< HEAD
   { path: "editAccount", component: EditUserComponent, canActivate: [AuthGuard] },
+=======
+  { path: "editAccount", component: EditUserComponent },
+>>>>>>> 247b6c539a991b05e084e0b931ccff0282dd9c4b
   { path: "orderdetails/:id", component: OrderdetailsComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
+<<<<<<< HEAD
   imports: [RouterModule.forRoot(routes)],
+=======
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+>>>>>>> 247b6c539a991b05e084e0b931ccff0282dd9c4b
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

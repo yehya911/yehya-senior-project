@@ -11,7 +11,12 @@ import { User } from './user';
 export class DataService {
   userId: any = localStorage.getItem('userId');
   admin: any = localStorage.getItem('isAdmin');
+<<<<<<< HEAD
   Url: string = "http://localhost/Senior_php/";
+=======
+  // Url: string = "http://localhost/Senior_php/";
+  Url: string = "https://yehya811.000webhostapp.com/senior/";
+>>>>>>> 247b6c539a991b05e084e0b931ccff0282dd9c4b
 
   constructor(private http: HttpClient) { }
 

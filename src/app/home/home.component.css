@@ -3,12 +3,22 @@
   height: 600px;
   background-position: center top;
   background-size: cover;
+<<<<<<< HEAD
 }
 
 .content {
   top: 25%;
   left: 15%;
   position: relative;
+=======
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  top: 25%;
+  left: 15%;
+>>>>>>> 247b6c539a991b05e084e0b931ccff0282dd9c4b
 }
 
 .content a {
